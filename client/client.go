@@ -8,7 +8,7 @@ import (
 	"os"
 	"strings"
 
-	ImConstant "github.com/LunaY77/IM-go/const"
+	ImConstant "github.com/LunaY77/im-go/const"
 )
 
 type Client struct {
@@ -17,7 +17,6 @@ type Client struct {
 	Name       string
 	conn       net.Conn
 	command    int
-	heartBeat  chan bool
 }
 
 func NewClient(serverIp string, serverPort int) *Client {
@@ -25,7 +24,6 @@ func NewClient(serverIp string, serverPort int) *Client {
 		ServerIp:   serverIp,
 		ServerPort: serverPort,
 		command:    999,
-		heartBeat:  make(chan bool),
 	}
 
 	conn, err := net.Dial("tcp", fmt.Sprintf("%s:%d", serverIp, serverPort))
@@ -173,8 +171,8 @@ var serverIp string
 var serverPort int
 
 func init() {
-	flag.StringVar(&serverIp, "ip", "127.0.0.1", "set server ip")
-	flag.IntVar(&serverPort, "port", 8888, "set server port")
+	flag.StringVar(&serverIp, "ip", ImConstant.ServerIp, "set server ip")
+	flag.IntVar(&serverPort, "port", ImConstant.ServerPort, "set server port")
 }
 
 func main() {

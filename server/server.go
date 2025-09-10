@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	ImConstant "github.com/LunaY77/IM-go/const"
+	ImConstant "github.com/LunaY77/im-go/const"
 )
 
 type Server struct {

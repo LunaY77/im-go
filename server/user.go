@@ -5,7 +5,7 @@ import (
 	"io"
 	"net"
 
-	ImConstant "github.com/LunaY77/IM-go/const"
+	ImConstant "github.com/LunaY77/im-go/const"
 )
 
 type User struct {

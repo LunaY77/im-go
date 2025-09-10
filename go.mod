@@ -1,3 +1,3 @@
-module github.com/LunaY77/IM-go
+module github.com/LunaY77/im-go
 
 go 1.24.3
